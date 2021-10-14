@@ -10,8 +10,11 @@
 
     <ul>
         {% for book in books %}
-            <li> <a href="{% url "book-detail" book.id %}"> {{ book.title }} (Rating: {{ book.rating }}) </a></li>
+            <li> <a href="{% url "book-detail" book.slug %}"> {{ book.title }} (Rating: {{ book.rating }}) </a></li>
         {% endfor %}
     </ul>
 
+    <hr>
+    <p> Total Number of Books: {{ total_number_of_books }} </p>
+    <p> Average Rating: {{ average_rating.rating__avg }} </p>
 {% endblock %}
